@@ -25,8 +25,16 @@ public class MyHeap{
       }
     }
   }
+  //pretty simple alg
   private static void pushUp(int[]data, int index){
-
+    if (data[(index - 1) / 2] >= data[index]){
+      return;
+    }
+    else if (index == 0) {
+      return;
+    }
+    swap(data, index, (index - 1) / 2);
+    pushUp(data, (index - 1) / 2);
   }
   public static void heapify(int[] arr){
 
